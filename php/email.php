@@ -6,8 +6,7 @@ if (isset($_REQUEST['Email']) ) {
     //Guardar datos en la base de datos
 
 $Name = $_REQUEST['Name'];
-//$Email = $_REQUEST['Email'];
-$Email = 'electronicaysistemas@gmail.com';
+$Email = $_REQUEST['Email'];
 $Subject = $_REQUEST['Subject'];
 $Comments = $_REQUEST['Comments'];
       
@@ -54,7 +53,7 @@ $Comments = $_REQUEST['Comments'];
                       if(!$correo->Send()) {
                         echo "Hubo un error: " . $correo->ErrorInfo;
                       } else {
-                        echo "Mensaje enviado con exito.";
+                      //  echo "Mensaje enviado con exito.";
                       }
         //envio de correo
       
@@ -64,5 +63,5 @@ $Comments = $_REQUEST['Comments'];
 <?php   
   
 //reenvio de pagina
-print "<script>alert('¡Your request has been sent!');window.location='../index.php';</script>";
+print "<script>alert('Your request has been sent!');window.location='../index.html';</script>";
  ?>
